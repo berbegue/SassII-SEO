@@ -4,6 +4,12 @@
   box-sizing: border-box;
   font-family: 'Nunito', sans-serif; }
 
+.listaProductos .producto1, .listaProductos .producto2, .listaProductos .producto3, .listaProductos .producto4, .listaProductos .producto5, .listaProductos .producto6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 1s; }
+
 body {
   background-image: url(../images/fondo.jpg);
   background-repeat: no-repeat;
@@ -35,8 +41,8 @@ body {
     grid-area: titulo;
     text-align: center; }
   body main div.container1 div.container2 {
-    width: 100%;
-    height: 20%;
+    width: 20%;
+    height: 100%;
     padding: 0 2rem 0 2rem; }
     body main div.container1 div.container2 div.carousel-inner {
       width: 100%;
@@ -65,8 +71,8 @@ body {
       color: #d1d1aa;
       text-align: center; }
     body main .ultIngresos .flecha img {
-      height: 1.5rem;
-      width: 1.5rem; }
+      width: 1.5rem;
+      height: 1.5rem; }
     body main .ultIngresos #f1 {
       grid-area: izq2;
       justify-self: end; }
@@ -94,3 +100,59 @@ body {
     body footer h3 {
       font-size: 1rem;
       color: #d1d1aa; }
+
+.listaProductos {
+  display: grid;
+  row-gap: 2rem;
+  column-gap: 4rem;
+  grid-template-areas: "orden orden orden" "p1 p2 p3" "p4 p5 p6";
+  align-items: center;
+  justify-content: center; }
+  .listaProductos img {
+    width: 10rem;
+    height: 10rem; }
+  .listaProductos h3 {
+    color: #d1d1aa;
+    text-align: center;
+    font-size: 1rem; }
+  .listaProductos h4 {
+    text-align: center;
+    font-size: 0.7rem;
+    color: #d1d1aa; }
+  .listaProductos .producto1 {
+    grid-area: p1; }
+  .listaProductos .producto1:hover {
+    transform: scale(1.1); }
+  .listaProductos .producto2 {
+    grid-area: p2; }
+  .listaProductos .producto2:hover {
+    transform: scale(1.1); }
+  .listaProductos .producto3 {
+    grid-area: p3; }
+  .listaProductos .producto3:hover {
+    transform: scale(1.1); }
+  .listaProductos .producto4 {
+    grid-area: p4; }
+  .listaProductos .producto4:hover {
+    transform: scale(1.1); }
+  .listaProductos .producto5 {
+    grid-area: p5; }
+  .listaProductos .producto5:hover {
+    transform: scale(1.1); }
+  .listaProductos .producto6 {
+    grid-area: p6; }
+  .listaProductos .producto6:hover {
+    transform: scale(1.1); }
+  .listaProductos .ordenador {
+    grid-area: orden;
+    text-align: right;
+    margin: 1rem; }
+
+form span {
+  color: #d1d1aa; }
+
+.btn-instagram {
+  background-color: #f87f2e; }
+
+.btn-facebook {
+  background-color: #1010b9; }

@@ -5,6 +5,18 @@
     box-sizing: border-box;
     font-family:'Nunito', sans-serif;
 }
+
+
+@mixin sizes ($heigth, $width){
+    width: $width;
+    height: $heigth;
+}
+%productos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 1s;
+}
 //importando variables
 @import "utilities/variables";
 body{
@@ -53,15 +65,12 @@ body{
         }
         div.container1{
             div.container2{
-                width: 100%;
-                height: 20%;
+                @include sizes(100%, 20%)
                 padding: 0 2rem 0 2rem;
                 div.carousel-inner{
-                    width: 100%;
-                    height: 100%;
+                    @include sizes(100%, 100%)
                     div.carousel-item{
-                        width: 100%;
-                        height: 100%;
+                        @include sizes(100%, 100%)
                     }
                 }
             }
@@ -76,8 +85,7 @@ body{
             align-items: center;
             li{
                 img{
-                    width: 12rem;
-                    height: 12rem;
+                    @include sizes(12rem, 12rem)
                 }
             }
         }
@@ -96,8 +104,7 @@ body{
             }
             .flecha{
                 img{
-                    height: 1.5rem;
-                    width: 1.5rem;
+                    @include sizes(1.5rem, 1.5rem)
                 }
             }
             #f1{
@@ -110,8 +117,7 @@ body{
             }
             .ingreso{
                 img{
-                    width: 10rem;
-                    height: 10rem;
+                    @include sizes(10rem, 10rem)
                 }
                 
             }
@@ -135,8 +141,7 @@ body{
         margin: 2rem;
         text-align: center;
         img{
-            width: 2rem;
-            height: 2rem;
+            @include sizes(2rem, 2rem)
         }
         h3{
             font-size: 1rem;
@@ -145,3 +150,89 @@ body{
     }
 
 }
+.listaProductos{
+    display: grid;
+    row-gap: 2rem;
+    column-gap: 4rem;
+    grid-template-areas: "orden orden orden"
+                         "p1 p2 p3"
+                         "p4 p5 p6";
+    align-items: center;
+    justify-content: center;
+    img{
+        @include sizes (10rem, 10rem)
+    }
+    h3{
+        color: $color-secundario;
+        text-align: center;
+        font-size: 1rem;
+    }
+    h4{
+        text-align: center;
+        font-size: 0.7rem;
+        color: $color-secundario;
+    }
+    .producto1{
+        @extend %productos;
+        grid-area: p1;
+        
+    }
+    .producto1:hover{
+        transform: scale(1.1);
+    }
+    .producto2{
+        @extend %productos;
+        grid-area: p2;
+    }
+    .producto2:hover{
+        transform: scale(1.1);
+    }
+    .producto3{
+        @extend %productos;
+        grid-area: p3;
+    }
+    .producto3:hover{
+        transform: scale(1.1);
+    }
+    .producto4{
+        @extend %productos;
+        grid-area: p4;
+    }
+    .producto4:hover{
+        transform: scale(1.1);
+    }
+    .producto5{
+        @extend %productos;
+        grid-area: p5;
+    }
+    .producto5:hover{
+        transform: scale(1.1);
+    }
+    .producto6{
+        @extend %productos;
+        grid-area: p6;
+    }
+    .producto6:hover{
+        transform: scale(1.1);
+    }
+    
+    
+    .ordenador{
+        grid-area: orden;
+        text-align: right;
+        margin: 1rem;
+    }
+}
+form span{
+    color: $color-secundario ;
+}
+$redes: (
+    instagram: rgb(248, 127, 46),
+    facebook: rgb(16, 16, 185),
+);
+@each $red, $color in $redes {
+    .btn-#{$red}{
+        background-color: $color;
+    }
+}
+
